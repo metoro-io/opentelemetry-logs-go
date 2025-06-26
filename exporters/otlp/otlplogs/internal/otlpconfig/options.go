@@ -26,6 +26,7 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/encoding/gzip"
+	"net/http"
 	"path"
 	"strings"
 	"time"
@@ -53,6 +54,8 @@ type (
 
 		// gRPC configurations
 		GRPCCredentials credentials.TransportCredentials
+
+		HTTPClient *http.Client
 	}
 
 	Config struct {
@@ -343,6 +346,13 @@ func WithTimeout(duration time.Duration) GenericOption {
 func WithProtocol(protocol Protocol) GenericOption {
 	return newGenericOption(func(cfg Config) Config {
 		cfg.Logs.Protocol = protocol
+		return cfg
+	})
+}
+
+func WithHTTPClient(c *http.Client) GenericOption {
+	return newGenericOption(func(cfg Config) Config {
+		cfg.Logs.HTTPClient = c
 		return cfg
 	})
 }

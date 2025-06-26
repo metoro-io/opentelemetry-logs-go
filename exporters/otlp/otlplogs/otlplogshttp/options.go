@@ -20,6 +20,7 @@ import (
 	"crypto/tls"
 	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs/internal/otlpconfig"
 	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs/internal/retry"
+	"net/http"
 	"time"
 )
 
@@ -83,6 +84,22 @@ func WithProtobufProtocol() Option {
 // WithCompression tells the driver to compress the sent data.
 func WithCompression(compression Compression) Option {
 	return wrappedOption{otlpconfig.WithCompression(otlpconfig.Compression(compression))}
+}
+
+// WithHTTPClient sets the HTTP client to used by the exporter.
+//
+// This option will take precedence over [WithProxy], [WithTimeout],
+// [WithTLSClientConfig] options as well as OTEL_EXPORTER_OTLP_CERTIFICATE,
+// OTEL_EXPORTER_OTLP_TRACES_CERTIFICATE, OTEL_EXPORTER_OTLP_TIMEOUT,
+// OTEL_EXPORTER_OTLP_TRACES_TIMEOUT environment variables.
+//
+// Timeout and all other fields of the passed [http.Client] are left intact.
+//
+// Be aware that passing an HTTP client with transport like
+// [go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.NewTransport] can
+// cause the client to be instrumented twice and cause infinite recursion.
+func WithHTTPClient(c *http.Client) Option {
+	return wrappedOption{otlpconfig.WithHTTPClient(c)}
 }
 
 // WithURLPath allows one to override the default URL path used

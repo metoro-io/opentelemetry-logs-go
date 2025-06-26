@@ -85,14 +85,17 @@ func NewClient(opts ...Option) *httpClient {
 		cfg.Logs.Protocol = otlpconfig.ExporterProtocolHttpProtobuf
 	}
 
-	client := &http.Client{
-		Transport: ourTransport,
-		Timeout:   cfg.Logs.Timeout,
-	}
-	if cfg.Logs.TLSCfg != nil {
-		transport := ourTransport.Clone()
-		transport.TLSClientConfig = cfg.Logs.TLSCfg
-		client.Transport = transport
+	client := cfg.Logs.HTTPClient
+	if client == nil {
+		client = &http.Client{
+			Transport: ourTransport,
+			Timeout:   cfg.Logs.Timeout,
+		}
+		if cfg.Logs.TLSCfg != nil {
+			transport := ourTransport.Clone()
+			transport.TLSClientConfig = cfg.Logs.TLSCfg
+			client.Transport = transport
+		}
 	}
 
 	stopCh := make(chan struct{})
