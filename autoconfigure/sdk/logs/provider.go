@@ -3,10 +3,10 @@ package logs
 import (
 	"context"
 	"errors"
-	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs"
-	"github.com/agoda-com/opentelemetry-logs-go/exporters/stdout/stdoutlogs"
-	"github.com/agoda-com/opentelemetry-logs-go/internal/global"
-	sdk "github.com/agoda-com/opentelemetry-logs-go/sdk/logs"
+	"github.com/metoro-io/opentelemetry-logs-go/exporters/otlp/otlplogs"
+	"github.com/metoro-io/opentelemetry-logs-go/exporters/stdout/stdoutlogs"
+	"github.com/metoro-io/opentelemetry-logs-go/internal/global"
+	sdk "github.com/metoro-io/opentelemetry-logs-go/sdk/logs"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/sdk/resource"
 )

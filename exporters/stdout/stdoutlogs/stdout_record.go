@@ -18,8 +18,8 @@ package stdoutlogs
 
 import (
 	"fmt"
-	"github.com/agoda-com/opentelemetry-logs-go/logs"
-	sdk "github.com/agoda-com/opentelemetry-logs-go/sdk/logs"
+	"github.com/metoro-io/opentelemetry-logs-go/logs"
+	sdk "github.com/metoro-io/opentelemetry-logs-go/sdk/logs"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/sdk/instrumentation"
 	"go.opentelemetry.io/otel/sdk/resource"

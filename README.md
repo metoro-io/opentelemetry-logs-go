@@ -1,6 +1,6 @@
 # OpenTelemetry-Logs-Go
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/agoda-com/opentelemetry-logs-go.svg)](https://pkg.go.dev/github.com/agoda-com/opentelemetry-logs-go)
+[![Go Reference](https://pkg.go.dev/badge/github.com/metoro-io/opentelemetry-logs-go.svg)](https://pkg.go.dev/github.com/metoro-io/opentelemetry-logs-go)
 [![codecov](https://codecov.io/github/agoda-com/opentelemetry-logs-go/graph/badge.svg?token=F1NW0R0W75)](https://codecov.io/github/agoda-com/opentelemetry-logs-go)
 
 OpenTelemetry-Logs-Go is the [Go](https://golang.org) implementation of [OpenTelemetry](https://opentelemetry.io/) Logs.
@@ -45,8 +45,8 @@ Example bellow will show how logging library could be instrumented with current 
 package myInstrumentedLogger
 
 import (
-	otel "github.com/agoda-com/opentelemetry-logs-go"
-	"github.com/agoda-com/opentelemetry-logs-go/logs"
+	otel "github.com/metoro-io/opentelemetry-logs-go"
+	"github.com/metoro-io/opentelemetry-logs-go/logs"
 	semconv "go.opentelemetry.io/otel/semconv/v1.27.0"
 )
 
@@ -82,12 +82,12 @@ package main
 import (
 	"os"
 	"context"
-	"github.com/agoda-com/opentelemetry-logs-go"
-	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs"
-	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs/otlplogshttp"
+	"github.com/metoro-io/opentelemetry-logs-go"
+	"github.com/metoro-io/opentelemetry-logs-go/exporters/otlp/otlplogs"
+	"github.com/metoro-io/opentelemetry-logs-go/exporters/otlp/otlplogs/otlplogshttp"
 	"go.opentelemetry.io/otel/sdk/resource"
 	semconv "go.opentelemetry.io/otel/semconv/v1.27.0"
-	sdk "github.com/agoda-com/opentelemetry-logs-go/sdk/logs"
+	sdk "github.com/metoro-io/opentelemetry-logs-go/sdk/logs"
 )
 
 func newResource() *resource.Resource {

@@ -18,8 +18,8 @@ package otlplogshttp
 
 import (
 	"crypto/tls"
-	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs/internal/otlpconfig"
-	"github.com/agoda-com/opentelemetry-logs-go/exporters/otlp/otlplogs/internal/retry"
+	"github.com/metoro-io/opentelemetry-logs-go/exporters/otlp/otlplogs/internal/otlpconfig"
+	"github.com/metoro-io/opentelemetry-logs-go/exporters/otlp/otlplogs/internal/retry"
 	"net/http"
 	"time"
 )

@@ -2,10 +2,10 @@ package logs_test
 
 import (
 	"context"
-	otel "github.com/agoda-com/opentelemetry-logs-go"
-	autosdk "github.com/agoda-com/opentelemetry-logs-go/autoconfigure/sdk/logs"
-	"github.com/agoda-com/opentelemetry-logs-go/logs"
-	sdk "github.com/agoda-com/opentelemetry-logs-go/sdk/logs"
+	otel "github.com/metoro-io/opentelemetry-logs-go"
+	autosdk "github.com/metoro-io/opentelemetry-logs-go/autoconfigure/sdk/logs"
+	"github.com/metoro-io/opentelemetry-logs-go/logs"
+	sdk "github.com/metoro-io/opentelemetry-logs-go/sdk/logs"
 	"github.com/stretchr/testify/assert"
 	semconv "go.opentelemetry.io/otel/semconv/v1.27.0"
 	"testing"
